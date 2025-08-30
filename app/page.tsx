@@ -33,7 +33,7 @@ export default function NaierStoreLanding() {
   const products = [
     {
       name: "Nebula Cloud",
-      location: "Malaysia",
+      location: "Premiunm",
       icon: "/images/nebula-icon.png",
       features: [
         "Ping kecil & stabil",
