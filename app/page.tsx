@@ -30,11 +30,16 @@ export default function NaierStoreLanding() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
   }
 
+  const WA_NUMBER = "6285122907262"
+  const openWA = () => {
+    window.open(`https://wa.me/${WA_NUMBER}`, "_blank")
+  }
+
   const products = [
     {
       name: "Nebula Cloud",
       location: "Premium",
-      icon: "/images/luna-icon.png",
+      icon: "/images/nebula-icon.png",
       features: [
         "Ping kecil & stabil",
         "No antri",
@@ -56,7 +61,7 @@ export default function NaierStoreLanding() {
     {
       name: "Luna+ Cloud",
       location: "Premium",
-      icon: "/images/nebula-icon.png",
+      icon: "/images/luna-icon.png",
       features: [
         "Server berkualitas",
         "No antri",
@@ -72,13 +77,6 @@ export default function NaierStoreLanding() {
       name: "Xbox Cloud",
       subtitle: "Game Pass Ultimate",
       icon: "/images/xbox-icon.png",
-      features: [
-        "Nonstop Play 24/7",
-        "Online + Multiplayer Local",
-        "Akun Anti Terkunci",
-        "Tanpa antrian",
-        "Bisa main tanpa VPN",
-      ],
       pricing: [
         { duration: "1 Hari", price: "12K" },
         { duration: "2 Hari", price: "22K" },
@@ -87,8 +85,10 @@ export default function NaierStoreLanding() {
         { duration: "15 Hari", price: "95K" },
         { duration: "1 Bulan", price: "135K" },
         { duration: "2 Bulan", price: "168K" },
-        { duration: "8 Bulan", price: "395K" },
-        { duration: "13 Bulan", price: "697K" },
+        { duration: "4 Bulan", price: "245K" },
+        { duration: "5 Bulan", price: "295K" },
+        { duration: "8 Bulan", price: "425K" },
+        { duration: "13 Bulan", price: "712K" },
       ],
       color: "from-green-500 to-emerald-400",
     },
@@ -220,7 +220,7 @@ export default function NaierStoreLanding() {
               size="lg"
               variant="outline"
               className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground font-semibold bg-transparent w-full sm:w-auto"
-              onClick={() => window.open("https://wa.me/6285180674008", "_blank")}
+              onClick={openWA}
             >
               <Zap className="mr-2 h-5 w-5" />
               Order via WhatsApp
@@ -331,17 +331,19 @@ export default function NaierStoreLanding() {
                   )}
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <div>
-                    <h4 className="font-semibold mb-3 text-foreground">Fitur:</h4>
-                    <ul className="space-y-2">
-                      {product.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-sm text-muted-foreground">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  {product.features?.length ? (
+                    <div>
+                      <h4 className="font-semibold mb-3 text-foreground">Fitur:</h4>
+                      <ul className="space-y-2">
+                        {product.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-center text-sm text-muted-foreground">
+                            <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : null}
 
                   <div>
                     <h4 className="font-semibold mb-3 text-foreground">Harga:</h4>
@@ -555,10 +557,10 @@ export default function NaierStoreLanding() {
             <Button
               size="lg"
               className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 font-bold glow-effect"
-              onClick={() => window.open("https://wa.me/6285180674008", "_blank")}
+              onClick={openWA}
             >
               <Zap className="mr-2 h-5 w-5" />
-              Pesan Sekarang via WhatsApp
+              Pesan via WhatsApp
             </Button>
           </div>
         </div>
@@ -675,7 +677,7 @@ export default function NaierStoreLanding() {
           <Button
             size="lg"
             className="text-lg md:text-xl px-8 md:px-12 py-6 md:py-8 glow-effect bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 font-bold w-full sm:w-auto"
-            onClick={() => window.open("https://wa.me/6285180674008", "_blank")}
+            onClick={openWA}
           >
             <Gamepad2 className="mr-3 h-6 w-6" />
             Order via WhatsApp Sekarang!
@@ -698,7 +700,7 @@ export default function NaierStoreLanding() {
           <p className="text-muted-foreground mb-4">© 2024 NaierStore. Cloud Gaming Terbaik Indonesia.</p>
           <p className="text-sm text-muted-foreground">
             Hubungi kami:{" "}
-            <a href="https://wa.me/6285180674008" className="text-primary hover:underline">
+            <a href={`https://wa.me/${WA_NUMBER}`} className="text-primary hover:underline">
               WhatsApp
             </a>
           </p>
