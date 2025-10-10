@@ -19,6 +19,38 @@ import {
 } from "lucide-react"
 import Image from "next/image"
 
+function ImgWithFallback({
+  src,
+  fallbackSrc,
+  alt,
+  width,
+  height,
+  className,
+}: {
+  src: string
+  fallbackSrc?: string
+  alt: string
+  width: number
+  height: number
+  className?: string
+}) {
+  const [imgSrc, setImgSrc] = useState(src)
+  return (
+    <Image
+      src={imgSrc || "/placeholder.svg"}
+      alt={alt}
+      width={width}
+      height={height}
+      className={className}
+      onError={() => {
+        if (fallbackSrc && imgSrc !== fallbackSrc) {
+          setImgSrc(fallbackSrc)
+        }
+      }}
+    />
+  )
+}
+
 export default function NaierStoreLanding() {
   const [isVisible, setIsVisible] = useState(false)
 
@@ -61,7 +93,8 @@ export default function NaierStoreLanding() {
     {
       name: "Luna+ Cloud",
       location: "Premium",
-      icon: "/images/luna.jpg", // Updated icon file
+      icon: "/images/luna.png",
+      iconFallback: "/images/luna.jpg",
       features: [
         "Server berkualitas",
         "No antri",
@@ -92,7 +125,16 @@ export default function NaierStoreLanding() {
       ],
       color: "from-green-500 to-emerald-400",
     },
-  ]
+  ] as Array<{
+    name: string
+    location?: string
+    subtitle?: string
+    icon: string
+    iconFallback?: string
+    features?: string[]
+    pricing: { duration: string; price: string }[]
+    color: string
+  }>
 
   const platforms = [
     {
@@ -310,8 +352,9 @@ export default function NaierStoreLanding() {
                   <div
                     className={`w-full h-24 md:h-32 bg-gradient-to-r ${product.color} rounded-lg mb-4 flex items-center justify-center relative overflow-hidden`}
                   >
-                    <Image
+                    <ImgWithFallback
                       src={product.icon || "/placeholder.svg"}
+                      fallbackSrc={product.iconFallback}
                       alt={`${product.name} Icon`}
                       width={64}
                       height={64}
@@ -506,8 +549,9 @@ export default function NaierStoreLanding() {
                     <div
                       className={`w-12 h-12 bg-gradient-to-r ${product.color} rounded-lg flex items-center justify-center flex-shrink-0`}
                     >
-                      <Image
+                      <ImgWithFallback
                         src={product.icon || "/placeholder.svg"}
+                        fallbackSrc={product.iconFallback}
                         alt={`${product.name} Icon`}
                         width={24}
                         height={24}
@@ -709,4 +753,3 @@ export default function NaierStoreLanding() {
     </div>
   )
 }
- 
