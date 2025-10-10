@@ -39,7 +39,7 @@ export default function NaierStoreLanding() {
     {
       name: "Nebula Cloud",
       location: "Premium",
-      icon: "/images/nebula-icon.png",
+      icon: "/images/nebula.png", // Updated icon file
       features: [
         "Ping kecil & stabil",
         "No antri",
@@ -61,7 +61,7 @@ export default function NaierStoreLanding() {
     {
       name: "Luna+ Cloud",
       location: "Premium",
-      icon: "/images/luna-icon.png",
+      icon: "/images/luna.jpg", // Updated icon file
       features: [
         "Server berkualitas",
         "No antri",
@@ -188,7 +188,7 @@ export default function NaierStoreLanding() {
               alt="NaierStore Logo"
               width={150}
               height={150}
-              className="float-effect md:w-[200px] md:h-[200px]"
+              className="float-effect md:w-[200px] md:h-[200px] rounded-2xl ring-1 ring-primary/30 bg-card/40 p-2 backdrop-blur-sm shadow-2xl shadow-primary/20"
             />
           </div>
 
