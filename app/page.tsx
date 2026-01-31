@@ -91,22 +91,29 @@ export default function NaierStoreLanding() {
       color: "from-blue-500 to-cyan-400",
     },
     {
-      name: "Luna+ Cloud",
-      location: "Premium",
-      icon: "/images/luna.jpg",
-      iconFallback: "/images/luna-icon.png",
-      features: [
-        "Server berkualitas",
-        "No antri",
-        "Bisa online",
-        "Support 4K+120FPS",
-        "Tanpa APK (cukup browser)",
-        "Free tutorial",
-      ],
-      pricing: [{ duration: "1 Minggu", price: "48K" }],
-      pricing: [{ duration: "1 BULAN ( SISTEM BUNDLING 4 AKUN SEMINGGU BISA MELANJUTKAN SAVE FC DI AKUN SEBELUMNYA", price: "138K" }],
-      color: "from-purple-500 to-pink-400",
+  name: "Luna+ Cloud",
+  location: "Premium",
+  icon: "/images/luna.jpg",
+  iconFallback: "/images/luna-icon.png",
+  features: [
+    "Server berkualitas",
+    "No antri",
+    "Bisa online",
+    "Support 4K+120FPS",
+    "Tanpa APK (cukup browser)",
+    "Free tutorial",
+  ],
+  pricing: [
+    { duration: "1 Minggu", price: "48K" },
+    {
+      duration:
+        "1 Bulan (Bundling 4 akun mingguan, bisa lanjut save FC)",
+      price: "138K",
     },
+  ],
+  color: "from-purple-500 to-pink-400",
+},
+
     {
       name: "Xbox Cloud",
       subtitle: "Game Pass Ultimate",
