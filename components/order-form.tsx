@@ -35,10 +35,13 @@ const CLOUD_PLANS = [
     name: 'Cloud Nebula',
     color: 'border-fuchsia-500/50 bg-fuchsia-500/5',
     pricing: [
-      { duration: '3 Hari', price: 30000 },
-      { duration: '7 Hari', price: 65000 },
-      { duration: '1 Bulan', price: 150000 },
-      { duration: '3 Bulan', price: 400000 },
+      { duration: '1 Hari', price: 18000 },
+      { duration: '2 Hari', price: 32000 },
+      { duration: '3 Hari', price: 42000 },
+      { duration: '5 Hari', price: 60000 },
+      { duration: '7 Hari', price: 85000 },
+      { duration: '14 Hari', price: 150000 },
+      { duration: '1 Bulan', price: 195000 },
     ],
   },
   {
